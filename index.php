@@ -20,9 +20,17 @@ $_SESSION[$field]=$_POST[$field];
 echo '<input name="'.$field.'" type="text" id="'.$field.'" value="'.$value.'" />';
 }
 setlocale(LC_CTYPE,'no_NO');
-$con = mysql_connect("pokemontrade5.mysql.domeneshop.no","pokemontrade5","QWqd4HVm") or die('Could not connect: ' . mysql_error());
-$db=mysql_select_db('pokemontrade5', $con) or die('Could not select db: ' . mysql_error());
 
+//Hent postnummer
+preg_match_all("/([0-9]{4})\t(.+)\t([0-9]{4})\t([A-Z])/",utf8_encode(file_get_contents('Postnummerregister_ansi.txt')),$postnummer);
+$postnummer[2]=array_map('mb_strtolower',$postnummer[2]);
+//http://php.net/manual/en/function.ucfirst.php#57298
+function mb_ucfirst($str) {
+    $fc = mb_strtoupper(mb_substr($str, 0, 1));
+    return $fc.mb_substr($str, 1);
+}
+$postnummer[2]=array_map('mb_ucfirst',$postnummer[2]);
+$postnummer=array_combine($postnummer[1],$postnummer[2]);
 
 
 function orgnrformat($nr)
@@ -155,12 +163,10 @@ return $nr;
       <hr />
       <h3>Eksempel:</h3>
       <?php if($_POST['dato']) {
-	  $result=mysql_query('SELECT * FROM postnr WHERE postnr=\''.$postnr.'\'') or die (mysql_error());
-	  if (!$result)
-	 	die('Postnummeret eksisterer ikke');
-	  $row=mysql_fetch_array($result);
-	  $sted=$row['sted'];
-	  $sted=substr($sted,0,1).strtolower(substr($sted,1));
+		if(empty($_POST['postnr']) || !isset($postnummer[$_POST['postnr']]))
+			$sted='';
+		else
+			$sted=$postnummer[$_POST['postnr']];
 	  $poststed=$postnr.'     '.$sted;
 	  $orgnr='Org Nr.: '.orgnrformat($orgnr);
 	  //die($poststed);
@@ -222,7 +228,7 @@ return $nr;
       <h3>Statistikk</h3>
 	  <?php
 	  //include("stats.php");
-	  mysql_close(); ?>
+?>
     </div>-->
   </div>
 </body>

@@ -1,5 +1,5 @@
 <?php
-session_start();
+require "cfunctions.php";
 
 function formdata($field,$default)
 {
@@ -10,7 +10,7 @@ echo $_POST[$field];
 }
 function formfield($field,$default)
 {
-if(!$_POST[$field])
+if(!isset($_POST[$field]))
 $value=$default;
 else
 {
@@ -38,9 +38,10 @@ function orgnrformat($nr)
 return $nr;
 }
 
-	 include "cfunctions.php";
 	 $today = no_day().date(" j. ").no_month().' '.date("Y").' kl '.date("G:i");
 	ob_start();
+	if(!empty($_POST))
+	{
 	$dato = $_POST['dato'];
 	$navn = $_POST['navn'];
 	$adresse =  $_POST['adresse'];
@@ -52,7 +53,7 @@ return $nr;
 	$tlf = $_POST['tlf'];
 	$orgnr = $_POST['orgnr'];
 	$firmanavn = $_POST['firmanavn'];
-	
+	}
 	$menu ='<a href="#topp">Innledning</a> | <a href="#generator">Generator</a> | <a href="#utskrift">Utskrift</a>';
 ?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
@@ -162,7 +163,7 @@ return $nr;
       </form>
       <hr />
       <h3>Eksempel:</h3>
-      <?php if($_POST['dato']) {
+      <?php if(isset($_POST['dato'])) {
 		if(empty($_POST['postnr']) || !isset($postnummer[$_POST['postnr']]))
 			$sted='';
 		else

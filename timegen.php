@@ -2,6 +2,9 @@
 // Timegen.php
 // Genererer en tannlegetime utifra GET data.
 session_start();
+if(!file_exists('verdana.ttf') || !file_exists('trebucbd.ttf'))
+	throw new Exception('Mangler verdana.ttf og/eller trebucbd.ttf');
+
 // teksten
 function getimage($name,$nr)
 {

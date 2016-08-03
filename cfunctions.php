@@ -23,9 +23,9 @@
 	session_start();
 
 	
-	function no_day() { // date("l") på norsk.
+	function no_day() { // date("l") pÃ¥ norsk.
 
-		$dag = date("l"); // dagen på engelsk
+		$dag = date("l"); // dagen pÃ¥ engelsk
 
 		switch($dag) {
 
@@ -61,13 +61,13 @@
 
 			case "Saturday":
 
-				$dag = "Lørdag";
+				$dag = "LÃ¸rdag";
 
 				break;
 
 			case "Sunday":
 
-				$dag = "Søndag";
+				$dag = "SÃ¸ndag";
 
 				break;
 
@@ -87,7 +87,7 @@
 
 	
 
-	function no_month() { // date("F") på norsk
+	function no_month() { // date("F") pÃ¥ norsk
 
 		$month = date("F");
 

@@ -56,7 +56,7 @@ $datosize = 10.5*$multiplier;
 $stedsize = 9*$multiplier;
 
 
-// lag et bilde utfra notextatall.png og sjekk høyde og bredde
+// lag et bilde utfra notextatall.png og sjekk hÃ¸yde og bredde
  //$im = imagecreatefrompng('notextatall.png');
 
 // $img[1]=imagecreatetruecolor (583*$multiplier,303*$multiplier);
@@ -67,7 +67,7 @@ $stedsize = 9*$multiplier;
 	$black = imagecolorallocate($img[1], 0, 0, 0);
 	$white = imagecolorallocate($img[1], 255, 255, 255); 
 	imagefill ($img[1],0,0, $white);
- // legg til teksten på bildet
+ // legg til teksten pÃ¥ bildet
  
  // personen
  imagettftext($img[1], $datosize, 0, 2*$multiplier, 170*$multiplier, $black, "./trebucbd.ttf", $dato); // timedato
@@ -83,10 +83,10 @@ $stedsize = 9*$multiplier;
  imagettftext($img[1], $stedsize, 0, 88*$multiplier, 65*$multiplier, $black, "./verdana.ttf", $tpoststed); //  
  imagettftext($img[1], $stedsize, 0, 87*$multiplier, 83*$multiplier, $black, "./verdana.ttf", $tlf); //  /
  imagettftext($img[1], $stedsize, 0, 87*$multiplier, 100*$multiplier, $black, "./verdana.ttf", $orgnr); //  /
-//if ($logo=='notextblå')
+//if ($logo=='notextblÃ¥')
 imagecopyresized ($img[1], $img[2], 0, 15*$multiplier, 0*$multiplier, 0*$multiplier,$width[2], $height[2], $width[2], $height[2]);
 //imagecopy ($img[1],$img[3], 0, 0, 0, 0, $width[3]*$multiplier, $height[3]*$multiplier);
-//Den hyggelige meldingen om at nå er det tid for kontroll igjen
+//Den hyggelige meldingen om at nÃ¥ er det tid for kontroll igjen
 
 imagettftext($img[1], 7.5*$multiplier, 0, 2*$multiplier, 229*$multiplier, $black, "./verdana.ttf", $_SESSION['line1']);
 imagettftext($img[1], 7.5*$multiplier, 0, 2*$multiplier, 241*$multiplier, $black, "./verdana.ttf", $_SESSION['line2']);

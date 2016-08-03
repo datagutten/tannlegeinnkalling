@@ -74,7 +74,7 @@ return $nr;
     <a name="generator"></a>
     <div class="area">
       <?php echo $menu;?>
-      <p>Bytt ut teksten her. Husk å beholde mellomrommene etter postnummer og dato.</p>
+      <p>Bytt ut teksten her. Husk Ã¥ beholde mellomrommene etter postnummer og dato.</p>
 	  <p>Du kan tilbakestille skjemaet til slik det var <a href="?#generator">her</a></p>
       <form method="post" action="#generator">
         <table width="100%">
@@ -129,15 +129,15 @@ return $nr;
 	      </tr>
 		  <tr>
 		    <td>Linje 1:</td>
-		    <td><?php formfield('line1','Nå er det tid for kontroll igjen.'); ?></td>
+		    <td><?php formfield('line1','NÃ¥ er det tid for kontroll igjen.'); ?></td>
 	      </tr>
 		  <tr>
 		    <td>Linje 2: </td>
-		    <td><?php formfield('line2','Vennligst ikke glem timen. Avbestilling av time må skje senest 24 timer før'); ?></td>
+		    <td><?php formfield('line2','Vennligst ikke glem timen. Avbestilling av time mÃ¥ skje senest 24 timer fÃ¸r'); ?></td>
 	      </tr>
 		  <tr>
 		    <td>Linje 3:</td>
-		    <td><?php formfield('line3','avtale. Ikke avbestilt time må betales.'); ?></td>
+		    <td><?php formfield('line3','avtale. Ikke avbestilt time mÃ¥ betales.'); ?></td>
 	      </tr>
 		  <tr>
 		    <td>Linje 4: </td>
@@ -183,10 +183,10 @@ return $nr;
       <table>
         <tr>
           <td><ol>
-              <li>Høyreklikk på bildet og velg "View Image / Vis Bilde".</li>
+              <li>HÃ¸yreklikk pÃ¥ bildet og velg "View Image / Vis Bilde".</li>
               <li>Velg "File / Fil" fra menyen opp til venstre.</li>
               <li>Velg "Print / Skriv ut".</li>
-              <li>Gå på "Preferences / Egenskaper" på printeren din og velg "Landscape / Liggende"</li>
+              <li>GÃ¥ pÃ¥ "Preferences / Egenskaper" pÃ¥ printeren din og velg "Landscape / Liggende"</li>
               <li>Skriv ut</li>
             </ol></td>
           <td><img src="images/gnome-help.png" alt="help" /> </td>
@@ -194,15 +194,15 @@ return $nr;
       </table>
       <b>Internet Explorer <img src="images/k.png" alt="ok"  /></b>
       <ol>
-        <li>Høyreklikk på bildet og velg "Print Picture / Skriv Ut Bilde". </li>
-        <li>Gå på "Preferences / Egenskaper" på printeren din og velg "Landscape / Liggende"</li>
+        <li>HÃ¸yreklikk pÃ¥ bildet og velg "Print Picture / Skriv Ut Bilde". </li>
+        <li>GÃ¥ pÃ¥ "Preferences / Egenskaper" pÃ¥ printeren din og velg "Landscape / Liggende"</li>
         <li>Skriv ut</li>
       </ol>
       <b>Word <img src="images/k.png" alt="ok" /></b>
       <ol>
-        <li>Høyreklikk på bildet og velg "Copy / Kopier".</li>
+        <li>HÃ¸yreklikk pÃ¥ bildet og velg "Copy / Kopier".</li>
         <li>Lim bildet inn i Word</li>
-        <li>Endre størrelsen på bildet og/eller margene slik at det blir passe stort. For lite er bedre enn for stort.</li>
+        <li>Endre stÃ¸rrelsen pÃ¥ bildet og/eller margene slik at det blir passe stort. For lite er bedre enn for stort.</li>
         <li>Skriv ut</li>
       </ol>
     </div>
